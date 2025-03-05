@@ -1,8 +1,8 @@
  #!/usr/bin/env bash
 #
-# Try `install_agnudp.sh --help` for usage.
+# Try `install_hyudp.sh --help` for usage.
 #
-# (c) 2023 Khaled AGN
+# (c) 2025 Eddyme23
 #
 
 set -e
@@ -19,7 +19,7 @@ DOMAIN="vpn.khaledagn.com"
 PROTOCOL="udp"
 
 # UDP PORT
-UDP_PORT=":36712"
+UDP_PORT=":5667"
 
 # OBFS
 OBFS="eddyvpn"
