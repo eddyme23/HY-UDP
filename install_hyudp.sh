@@ -19,7 +19,7 @@ DOMAIN="vpn.khaledagn.com"
 PROTOCOL="udp"
 
 # UDP PORT
-UDP_PORT=":5667"
+UDP_PORT=":36712"
 
 # OBFS
 OBFS="eddyvpn"
