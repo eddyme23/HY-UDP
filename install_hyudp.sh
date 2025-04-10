@@ -22,10 +22,10 @@ PROTOCOL="udp"
 UDP_PORT=":36712"
 
 # OBFS
-OBFS="GuruzX"
+OBFS="vpnGuruz"
 
 # PASSWORDS
-PASSWORD="GuruzX"
+PASSWORD="vpnGuruz"
 
 # Basename of this script
 SCRIPT_NAME="$(basename "$0")"
