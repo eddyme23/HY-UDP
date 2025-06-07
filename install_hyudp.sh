@@ -22,10 +22,10 @@ PROTOCOL="udp"
 UDP_PORT=":36712"
 
 # OBFS
-OBFS="vpnxXEdyln"
+OBFS="ndcgh6VPN"
 
 # PASSWORDS
-PASSWORD="vpnxXEdyln"
+PASSWORD="ndcgh6VPN"
 
 # Basename of this script
 SCRIPT_NAME="$(basename "$0")"
