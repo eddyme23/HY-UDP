@@ -13,7 +13,7 @@ set -e
 ###
 
 # Domain Name
-DOMAIN="vpn.khaledagn.com"
+DOMAIN="ws.guruz.uk"
 
 # PROTOCOL
 PROTOCOL="udp"
@@ -22,10 +22,10 @@ PROTOCOL="udp"
 UDP_PORT=":36712"
 
 # OBFS
-OBFS="ndcgh6VPN"
+OBFS="ExUdp25hy"
 
 # PASSWORDS
-PASSWORD="ndcgh6VPN"
+PASSWORD="ExUdp25hy"
 
 # Basename of this script
 SCRIPT_NAME="$(basename "$0")"
