@@ -22,7 +22,7 @@ PROTOCOL="udp"
 UDP_PORT=":36712"
 
 # OBFS
-OBFS="ExUdp25hy"
+OBFS="za2uhy"
 
 # PASSWORDS
 PASSWORD="ExUdp25hy"
