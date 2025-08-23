@@ -22,10 +22,10 @@ PROTOCOL="udp"
 UDP_PORT=":36712"
 
 # OBFS
-OBFS="sa4uhy"
+OBFS=""
 
 # PASSWORDS
-PASSWORD="EzUdp27hy"
+PASSWORD=""
 
 # Basename of this script
 SCRIPT_NAME="$(basename "$0")"
@@ -957,7 +957,15 @@ start_services() {
 
 
 main() {
-parse_arguments "$@"
+	parse_arguments "$@"
+
+	if [[ "$OPERATION" == "install" ]]; then
+		echo "Enter your desired OBFS code:"
+		read OBFS
+		echo "Enter your desired password:"
+		read PASSWORD
+	fi
+
 	check_permission
 	check_environment
 	check_hysteria_user "hysteria"
