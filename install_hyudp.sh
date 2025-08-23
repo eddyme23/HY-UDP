@@ -1,4 +1,4 @@
- #!/usr/bin/env bash
+#!/usr/bin/env bash
 #
 # Try `install_hyudp.sh --help` for usage.
 #
