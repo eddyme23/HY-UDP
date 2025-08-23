@@ -957,9 +957,12 @@ start_services() {
 
 
 main() {
+	echo "DEBUG: Entering main function."
 	parse_arguments "$@"
+	echo "DEBUG: OPERATION is set to '$OPERATION'."
 
 	if [[ "$OPERATION" == "install" ]]; then
+		echo "DEBUG: Inside install block. About to prompt for credentials."
 		echo "Enter your desired OBFS code:"
 		read OBFS
 		echo "Enter your desired password:"
