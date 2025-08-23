@@ -867,11 +867,6 @@ perform_install() {
 		_is_frash_install=1
 		fi
 		
-            echo "Enter your desired OBFS code:"
-            read OBFS
-            echo "Enter your desired password:"
-            read PASSWORD
-            
  						perform_install_hysteria_binary
 						perform_install_hysteria_example_config
 						perform_install_hysteria_home_legacy
@@ -962,7 +957,15 @@ start_services() {
 
 
 main() {
-parse_arguments "$@"
+	parse_arguments "$@"
+
+	if [[ "$OPERATION" == "install" ]]; then
+		echo "Enter your desired OBFS code:"
+		read OBFS
+		echo "Enter your desired password:"
+		read PASSWORD
+	fi
+
 	check_permission
 	check_environment
 	check_hysteria_user "hysteria"
