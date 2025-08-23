@@ -22,10 +22,10 @@ PROTOCOL="udp"
 UDP_PORT=":36712"
 
 # OBFS
-OBFS="sa4uhy"
+OBFS=""
 
 # PASSWORDS
-PASSWORD="EzUdp27hy"
+PASSWORD=""
 
 # Basename of this script
 SCRIPT_NAME="$(basename "$0")"
@@ -867,7 +867,12 @@ perform_install() {
 		_is_frash_install=1
 		fi
 		
- 						perform_install_hysteria_binary
+            echo "Enter your desired OBFS code:"
+            read OBFS
+            echo "Enter your desired password:"
+            read PASSWORD
+
+						perform_install_hysteria_binary
 						perform_install_hysteria_example_config
 						perform_install_hysteria_home_legacy
 						perform_install_hysteria_systemd
