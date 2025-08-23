@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+ #!/usr/bin/env bash
 #
 # Try `install_hyudp.sh --help` for usage.
 #
@@ -765,7 +765,7 @@ get_latest_version() {
 			
 			local _latest_version=$(grep 'tag_name' "$_tmpfile" | head -1 | grep -o '"v.*"')
 			_latest_version=${_latest_version#'"'}
-			_latest_version=${_latest_version%'"'}
+			_latest_version=${_latest_version%'""'}
 			
 			if [[ -n "$_latest_version" ]]; then
 				echo "$_latest_version"
@@ -957,12 +957,9 @@ start_services() {
 
 
 main() {
-	echo "DEBUG: Entering main function."
 	parse_arguments "$@"
-	echo "DEBUG: OPERATION is set to '$OPERATION'."
 
 	if [[ "$OPERATION" == "install" ]]; then
-		echo "DEBUG: Inside install block. About to prompt for credentials."
 		echo "Enter your desired OBFS code:"
 		read OBFS
 		echo "Enter your desired password:"
