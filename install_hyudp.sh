@@ -13,7 +13,7 @@ set -e
 ###
 
 # Domain Name
-DOMAIN="ws.guruz.uk"
+DOMAIN=""
 
 # PROTOCOL
 PROTOCOL="udp"
@@ -25,7 +25,6 @@ UDP_PORT=":36712"
 OBFS=""
 
 # PASSWORDS
-PASSWORD=""
 
 # Basename of this script
 SCRIPT_NAME="$(basename "$0")"
@@ -666,9 +665,13 @@ tpl_hysteria_server_x_service() {
 
 # /etc/hysteria/config.json
 tpl_etc_hysteria_config_json() {
+  local passwords_json
+  passwords_json=$(printf '"%s",' "${PASSWORDS_ARRAY[@]}")
+  passwords_json="[${passwords_json%,}]"
+
   cat << EOF
 {
-  "server": "vpn.khaledagn.com",
+  "server": "$DOMAIN",
    "listen": "$UDP_PORT",
   "protocol": "$PROTOCOL",
   "cert": "/etc/hysteria/hysteria.server.crt",
@@ -681,7 +684,7 @@ tpl_etc_hysteria_config_json() {
   "obfs": "$OBFS",
   "auth": {
 	"mode": "passwords",
-	"config": ["$PASSWORD"]
+	"config": $passwords_json
          }
 }
 EOF
@@ -867,10 +870,20 @@ perform_install() {
 		_is_frash_install=1
 		fi
 		
+            echo "Enter your Domain Name (e.g., my.domain.com):"
+            read DOMAIN
             echo "Enter your desired OBFS code:"
             read OBFS
-            echo "Enter your desired password:"
-            read PASSWORD
+            
+            echo "How many users do you want to create?"
+            read num_users
+
+            PASSWORDS_ARRAY=()
+            for (( i=1; i<=num_users; i++ )); do
+                echo "Enter password for user #$i:"
+                read user_password
+                PASSWORDS_ARRAY+=("$user_password")
+            done
 
 						perform_install_hysteria_binary
 						perform_install_hysteria_example_config
