@@ -1,4 +1,4 @@
- #!/usr/bin/env bash
+#!/usr/bin/env bash
 #
 # Try `install_hyudp.sh --help` for usage.
 #
@@ -22,10 +22,10 @@ PROTOCOL="udp"
 UDP_PORT=":36712"
 
 # OBFS
-OBFS=""
+OBFS="sa4uhy"
 
 # PASSWORDS
-PASSWORD=""
+PASSWORD="EzUdp27hy"
 
 # Basename of this script
 SCRIPT_NAME="$(basename "$0")"
@@ -957,15 +957,7 @@ start_services() {
 
 
 main() {
-	parse_arguments "$@"
-
-	if [[ "$OPERATION" == "install" ]]; then
-		echo "Enter your desired OBFS code:"
-		read OBFS
-		echo "Enter your desired password:"
-		read PASSWORD
-	fi
-
+parse_arguments "$@"
 	check_permission
 	check_environment
 	check_hysteria_user "hysteria"
