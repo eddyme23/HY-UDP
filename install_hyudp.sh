@@ -25,7 +25,7 @@ UDP_PORT=":36712"
 OBFS="sa4uhy"
 
 # PASSWORDS
-PASSWORD="EzUdp27hy"
+PASSWORD="EzUdp90hy"
 
 # Basename of this script
 SCRIPT_NAME="$(basename "$0")"
